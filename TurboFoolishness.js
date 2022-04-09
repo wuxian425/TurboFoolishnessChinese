@@ -10,12 +10,12 @@ constructor(runtime) {
       id: 'turbofoolishness',
       name: 'TurboFoolishness[Chinese]',
       docsURI: 'https://scratch.mit.edu/discuss/post/5964143/',
-      color1: '#614972',
+      color1: '#B54FFF',
       blocks: [
         {
           opcode: 'get',
           blockType: Scratch.BlockType.REPORTER,
-          text: 'HTTP_Get | 使用 [allorgins_get] 模式获取 [url] 的资料 ',
+          text: '使用 [allorgins_get] 模式获取 [url] 的资料 ',
           "arguments": {
             "url": {
               "type": Scratch.ArgumentType.STRING,
@@ -29,7 +29,7 @@ constructor(runtime) {
         },  '---',  {
           opcode: 'equaltotrue',
           blockType: Scratch.BlockType.BOOLEAN,
-          text: '返回值 | [boolean] 是否返回 True',
+          text: '[boolean] 是否返回 True',
           "arguments": {
             "boolean": {
               "type": Scratch.ArgumentType.BOOLEAN,
@@ -38,7 +38,7 @@ constructor(runtime) {
         }, {
           opcode: 'equaltofalse',
           blockType: Scratch.BlockType.BOOLEAN,
-          text: '返回值 | [boolean] 是否返回 False',
+          text: '[boolean] 是否返回 False',
           "arguments": {
             "boolean": {
               "type": Scratch.ArgumentType.BOOLEAN,
@@ -47,7 +47,7 @@ constructor(runtime) {
         },  {
           opcode: 'equaltonothing',
           blockType: Scratch.BlockType.BOOLEAN,
-          text: '返回值 | [boolean] 是否返回 Nothing',
+          text: '[boolean] 是否返回 Nothing',
           "arguments": {
             "boolean": {
               "type": Scratch.ArgumentType.BOOLEAN,
@@ -56,12 +56,12 @@ constructor(runtime) {
         },  '---',  {
           opcode: 'miliseconds',
           blockType: Scratch.BlockType.REPORTER,
-          text: '时间 | 当前的毫秒',
+          text: '当前的毫秒',
           disableMonitor: true,
         },  '---',  {
           opcode: 'ifthenelse',
           blockType: Scratch.BlockType.REPORTER,
-          text: '如果语句 | 如果 [if] 那么 [text] 否则 [else]',
+          text: '如果 [if] 那么 [text] 否则 [else]',
           "arguments": {
             "text": {
               "type": Scratch.ArgumentType.STRING,
@@ -78,7 +78,7 @@ constructor(runtime) {
         },  {
           opcode: 'ifthen',
           blockType: Scratch.BlockType.REPORTER,
-          text: '如果语句 | 如果 [if] 那么 [text]',
+          text: '如果 [if] 那么 [text]',
           "arguments": {
             "if": {
             "type": Scratch.ArgumentType.BOOLEAN,
@@ -91,7 +91,7 @@ constructor(runtime) {
         },  '---',  {
         opcode: 'parseJSON',
         blockType: Scratch.BlockType.REPORTER,
-        text: 'JSON | 获取 [PATH] 中 [JSON_STRING]',
+        text: '获取 [PATH] 中 [JSON_STRING]',
         "arguments": {
           "PATH": {
             "type":Scratch.ArgumentType.STRING,
@@ -105,7 +105,7 @@ constructor(runtime) {
         },  '---',  {
           opcode: 'js',
           blockType: Scratch.BlockType.COMMAND,
-          text: 'JavaScript | 执行 [js]',
+          text: '执行 [js]',
           "arguments": {
             "js": {
               "type": Scratch.ArgumentType.STRING,
