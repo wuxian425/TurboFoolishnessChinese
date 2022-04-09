@@ -8,9 +8,9 @@ constructor(runtime) {
   getInfo() {
     return {
       id: 'turbofoolishness',
-      name: 'TurboFoolishness[Chinese]',
+      name: 'TurboFoolishness',
       docsURI: 'https://scratch.mit.edu/discuss/post/5964143/',
-      color1: '#B54FFF',
+      color1: '#3b6ea0',
       blocks: [
         {
           opcode: 'get',
