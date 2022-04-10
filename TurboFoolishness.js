@@ -11,6 +11,7 @@ constructor(runtime) {
       name: 'TurboFoolishness',
       docsURI: 'https://scratch.mit.edu/discuss/post/5964143/',
       color1: '#3b6ea0',
+      color2: '#2166a6',
       blocks: [
         {
           opcode: 'get',
@@ -26,7 +27,17 @@ constructor(runtime) {
               "menu": "allorgins_get",
             }
           }
-        },  '---',  {
+        }, '---',  {
+          opcode: 'color',
+          blockType: Scratch.BlockType.REPORTER,
+          text: '[COLOR] 的 HEX 值',
+          arguments: {
+            COLOR: {
+              type: Scratch.ArgumentType.COLOR,
+              defaultValue: '#ff0000'
+            }
+          }
+        },'---',  {
           opcode: 'equaltotrue',
           blockType: Scratch.BlockType.BOOLEAN,
           text: '[boolean] 是否返回 True',
@@ -105,7 +116,7 @@ constructor(runtime) {
         },  '---',  {
           opcode: 'js',
           blockType: Scratch.BlockType.COMMAND,
-          text: '执行 [js]',
+          text: '执行JS [js]',
           "arguments": {
             "js": {
               "type": Scratch.ArgumentType.STRING,
@@ -115,7 +126,7 @@ constructor(runtime) {
         },  {
           opcode: 'js_reporter',
           blockType: Scratch.BlockType.REPORTER,
-          text: 'JavaScript | 执行 [js]',
+          text: '执行JS [js]',
           "arguments": {
             "js": {
               "type": Scratch.ArgumentType.STRING,
@@ -267,6 +278,9 @@ backwards_text(args) {
   };
 find_and_replace(args) {
   return args.text.replace(args.find, args.replace);
+  };
+color(args) {
+    return args.COLOR;
   };
 }
 Scratch.extensions.register(new turboFoolishness());
