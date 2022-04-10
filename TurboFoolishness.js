@@ -196,6 +196,26 @@ constructor(runtime) {
             }
           }
         }, {
+          opcode: 'binToTxt',
+          blockType: Scratch.BlockType.REPORTER,
+          text: '将 [BIN] 转为文字',
+          arguments: {
+            BIN: {
+              type: Scratch.ArgumentType.STRING,
+              defaultValue: '01010010 01101001 01111000 01111000 01111001 01011000'
+            }
+          }
+        }, {
+          opcode: 'txtToBin',
+          blockType: Scratch.BlockType.REPORTER,
+          text: '将 [TEXT] 转为二进制',
+          arguments: {
+            TEXT: {
+              type: Scratch.ArgumentType.STRING,
+              defaultValue: 'RixxyX'
+            }
+          }
+        }, {
           opcode: 'find_and_replace',
           blockType: Scratch.BlockType.REPORTER,
           text: '使用 [text] 替换 [replace] 中的 [find]',
@@ -308,5 +328,13 @@ toUppercase(args) {
 toLowercase(args) {
     return args.TEXT.toLowerCase();
   };
+binToTxt(args) {
+    var binary = args.BIN.toString();
+    return binary.split(" ").map((x) => x = String.fromCharCode(parseInt(x, 2))).join("");
+  };
+txtToBin(args) {
+    var text = args.TEXT.toString();
+    return Array.from(text).map((each)=>each.charCodeAt(0).toString(2)).join(" ");
+  }
 }
 Scratch.extensions.register(new turboFoolishness());
