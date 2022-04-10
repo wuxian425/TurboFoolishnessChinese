@@ -34,7 +34,7 @@ constructor(runtime) {
           arguments: {
             COLOR: {
               type: Scratch.ArgumentType.COLOR,
-              defaultValue: '#ff0000'
+              defaultValue: '#2166a6'
             }
           }
         },'---',  {
@@ -175,7 +175,27 @@ constructor(runtime) {
               "defaultValue": "foo",
             }
           }
-        },  {
+        }, {
+          opcode: 'toUppercase',
+          blockType: Scratch.BlockType.REPORTER,
+          text: '将 [TEXT] 转为大写',
+          arguments: {
+            TEXT: {
+              type: Scratch.ArgumentType.STRING,
+              defaultValue: 'rixxyx'
+            }
+          }
+        }, {
+          opcode: 'toLowercase',
+          blockType: Scratch.BlockType.REPORTER,
+          text: '将 [TEXT] 转为小写',
+          arguments: {
+            TEXT: {
+              type: Scratch.ArgumentType.STRING,
+              defaultValue: 'RIXXYX'
+            }
+          }
+        }, {
           opcode: 'find_and_replace',
           blockType: Scratch.BlockType.REPORTER,
           text: '使用 [text] 替换 [replace] 中的 [find]',
@@ -281,6 +301,12 @@ find_and_replace(args) {
   };
 color(args) {
     return args.COLOR;
+  };
+toUppercase(args) {
+    return args.TEXT.toUpperCase();
+  };
+toLowercase(args) {
+    return args.TEXT.toLowerCase();
   };
 }
 Scratch.extensions.register(new turboFoolishness());
