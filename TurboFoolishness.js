@@ -172,7 +172,7 @@ constructor(runtime) {
           "arguments": {
             "text": {
               "type": Scratch.ArgumentType.STRING,
-              "defaultValue": "foo",
+              "defaultValue": "TurboFoolishness",
             }
           }
         }, {
@@ -182,7 +182,7 @@ constructor(runtime) {
           arguments: {
             TEXT: {
               type: Scratch.ArgumentType.STRING,
-              defaultValue: 'rixxyx'
+              defaultValue: 'turbofoolishness'
             }
           }
         }, {
@@ -192,7 +192,7 @@ constructor(runtime) {
           arguments: {
             TEXT: {
               type: Scratch.ArgumentType.STRING,
-              defaultValue: 'RIXXYX'
+              defaultValue: 'TURBOFOOLISHNESS'
             }
           }
         }, {
@@ -202,7 +202,7 @@ constructor(runtime) {
           arguments: {
             BIN: {
               type: Scratch.ArgumentType.STRING,
-              defaultValue: '01010010 01101001 01111000 01111000 01111001 01011000'
+              defaultValue: '1010100 1110101 1110010 1100010 1101111 1000110 1101111 1101111 1101100 1101001 1110011 1101000 1101110 1100101 1110011 1110011'
             }
           }
         }, {
@@ -212,7 +212,21 @@ constructor(runtime) {
           arguments: {
             TEXT: {
               type: Scratch.ArgumentType.STRING,
-              defaultValue: 'RixxyX'
+              defaultValue: 'TurboFoolishness'
+            }
+          }
+        }, {
+          opcode: 'repeatTxtTimes',
+          blockType: Scratch.BlockType.REPORTER,
+          text: '将 [TEXT] 加入字符串 [NUM] 次',
+          arguments: {
+            TEXT: {
+              type: Scratch.ArgumentType.STRING,
+              defaultValue: 'x'
+            },
+            NUM: {
+              type: Scratch.ArgumentType.NUMBER,
+              defaultValue: 2
             }
           }
         }, {
@@ -335,6 +349,9 @@ binToTxt(args) {
 txtToBin(args) {
     var text = args.TEXT.toString();
     return Array.from(text).map((each)=>each.charCodeAt(0).toString(2)).join(" ");
-  }
+  };
+repeatTxtTimes(args) {
+    return args.TEXT.repeat(Math.floor(args.NUM));
+  };
 }
 Scratch.extensions.register(new turboFoolishness());
