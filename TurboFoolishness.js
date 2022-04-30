@@ -102,7 +102,7 @@ constructor(runtime) {
         },  '---',  {
         opcode: 'parseJSON',
         blockType: Scratch.BlockType.REPORTER,
-        text: '获取 [PATH] 中 [JSON_STRING]',
+        text: '获取 [JSON_STRING] 中的 [PATH]',
         "arguments": {
           "PATH": {
             "type":Scratch.ArgumentType.STRING,
